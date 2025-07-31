@@ -1,6 +1,6 @@
 const musik = document.getElementById("bg-music");
 const btn = document.getElementById("music-btn");
-let isPlaying = true;
+let isPlaying = false;
 
 btn.addEventListener("click", () => {
   if (!isPlaying) {
