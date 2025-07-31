@@ -1,38 +1,16 @@
 const musik = document.getElementById("bg-music");
-const btn = document.getElementById("music-btn");
-let isPlaying = false;
+const overlay = document.getElementById("overlay");
+const openBtn = document.getElementById("open-btn");
+const container = document.querySelector(".container");
 
-// Coba auto play saat load
-window.addEventListener("load", () => {
-  musik.muted = false; // pastikan tidak mute
+// Saat klik tombol buka undangan
+openBtn.addEventListener("click", () => {
   musik.play()
     .then(() => {
-      isPlaying = true;
-      btn.style.display = "none"; // sembunyikan tombol kalau sukses auto play
-      console.log("Auto play berhasil ✅");
+      overlay.style.display = "none"; // hilangkan overlay
+      container.style.display = "block"; // tampilkan undangan
     })
     .catch((err) => {
-      console.log("Auto play gagal ❌:", err);
-      isPlaying = false;
-      btn.textContent = "Play Music";
-      btn.style.display = "inline-block"; // tampilkan tombol kalau gagal auto play
+      console.log("Play blocked:", err);
     });
-});
-
-// Event klik untuk play/pause
-btn.addEventListener("click", () => {
-  if (!isPlaying) {
-    musik.play()
-      .then(() => {
-        isPlaying = true;
-        btn.textContent = "Pause Music";
-      })
-      .catch((err) => {
-        console.log("Play blocked:", err);
-      });
-  } else {
-    musik.pause();
-    isPlaying = false;
-    btn.textContent = "Play Music";
-  }
 });
