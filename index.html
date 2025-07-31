@@ -7,20 +7,25 @@
     <title>Undangan Pernikahan</title>
   </head>
   <body>
-    <div class="container">
+
+    <!-- Overlay pembuka -->
+    <div id="overlay">
+      <h2>Selamat Datang</h2>
+      <p>Klik tombol di bawah untuk membuka undangan</p>
+      <button id="open-btn">Buka Undangan</button>
+    </div>
+
+    <!-- Konten utama -->
+    <div class="container" style="display:none;">
       <h1>Undangan Pernikahan</h1>
       <p class="couple">Shifa & Aldi</p>
-      <p>
-        Dengan penuh cinta, kami mengundang anda untuk hadir dalam acara
-        pernikahan kami,
-      </p>
+      <p>Dengan penuh cinta, kami mengundang anda untuk hadir dalam acara pernikahan kami,</p>
       <p class="date">Minggu, 24 Agustus 2025</p>
       <p class="location">Jl. Palasari No. 60</p>
-      <button id="music-btn" style="display:none;">Play Music</button>
       <footer>Terima Kasih atas doa dan restunya.</footer>
     </div>
 
-    <!--musik-->
+    <!-- Musik -->
     <audio id="bg-music" loop>
       <source src="song/bensound-romantic.mp3" type="audio/mpeg" />
     </audio>
