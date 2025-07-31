@@ -7,10 +7,10 @@ const container = document.querySelector(".container");
 openBtn.addEventListener("click", () => {
   musik.play()
     .then(() => {
-      overlay.style.display = "none"; // hilangkan overlay
-      container.style.display = "block"; // tampilkan undangan
+      overlay.classList.add("fade-out"); // kasih animasi hilang
     })
     .catch((err) => {
       console.log("Play blocked:", err);
+      overlay.classList.add("fade-out");
     });
 });
