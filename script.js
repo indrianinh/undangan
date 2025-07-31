@@ -4,17 +4,18 @@ let isPlaying = false;
 
 // Coba auto play saat load
 window.addEventListener("load", () => {
-  musik.muted = false; // pastikan nggak mute
+  musik.muted = false; // pastikan tidak mute
   musik.play()
     .then(() => {
       isPlaying = true;
-      btn.textContent = "Pause Music";
+      btn.style.display = "none"; // sembunyikan tombol kalau sukses auto play
       console.log("Auto play berhasil ✅");
     })
     .catch((err) => {
       console.log("Auto play gagal ❌:", err);
       isPlaying = false;
       btn.textContent = "Play Music";
+      btn.style.display = "inline-block"; // tampilkan tombol kalau gagal auto play
     });
 });
 
